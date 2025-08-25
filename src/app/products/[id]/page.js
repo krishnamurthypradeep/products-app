@@ -26,13 +26,14 @@ export default async function ProductPage({params}) {
 
   {/* Product details */}
   <div className="grid grid-cols-[120px_1fr] gap-4 items-start">
-    <Image
+   {p.imageUrl && <Image
       className="rounded-md ring-1 ring-gray-200"
       src={p.imageUrl}
       alt={p.name}
       width={100}
       height={100}
     />
+   }
     <div className="space-y-2 text-gray-700">
       <p>
         <span className="font-semibold text-gray-900">Code:</span> {p.code}
@@ -43,7 +44,7 @@ export default async function ProductPage({params}) {
       </p>
       <p>
         <span className="font-semibold text-gray-900">Price:</span> $
-        {p.price.toFixed(2)}
+        {p.price}
       </p>
       <p>
         <span className="font-semibold text-gray-900">Rating:</span> {p.rating} / 5

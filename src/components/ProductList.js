@@ -74,13 +74,13 @@ export const ProductsList = ({products})=>{
           {filtered.map((p) => (
             <tr key={p.id} className="hover:bg-gray-50">
               <td className="px-4 py-3">
-                {show ? (
+                {show && p.imageUrl ?  (
                   <Image
                     className="rounded-md ring-1 ring-gray-200"
                     src={p.imageUrl}
                     alt={p.name}
                     width={50}
-                    height={50}
+                    height={50} unoptimized
                   />
                 ) : null}
               </td>
@@ -97,7 +97,7 @@ export const ProductsList = ({products})=>{
                 {new Date(p.available).toLocaleDateString()}
               </td>
               <td className="px-4 py-3 font-medium text-gray-900">
-                ${p.price.toFixed(2)}
+                ${p.price}
               </td>
               <td className="px-4 py-3 text-gray-700">
                 
